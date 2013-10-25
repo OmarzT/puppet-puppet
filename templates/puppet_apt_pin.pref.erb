@@ -1,0 +1,8 @@
+### File managed with puppet ###
+### Served by:        '<%= scope.lookupvar('::servername') %>'
+### Module:           '<%= scope.to_hash['module_name'] %>'
+### Template source:  'MODULES<%= template_source.gsub(Regexp.new("^#{Puppet::Node::Environment.current[:modulepath].gsub(':','|')}"),"") %>'
+Explanation: pin puppet packages to desired version
+Package: puppet puppet-common puppetmaster puppetmaster-common
+Pin: version <%= version %>
+Pin-Priority: 1000
